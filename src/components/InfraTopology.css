@@ -1,0 +1,200 @@
+.topology-container {
+  max-width: 900px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.topology-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.topology-diagram {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.topology-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.topology-line {
+  stroke: var(--accent-primary);
+  stroke-width: 0.3;
+  stroke-dasharray: 4 2;
+  opacity: 0.5;
+  animation: dashOffset 20s linear infinite;
+  stroke-dashoffset: 100;
+}
+
+.topology-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 2;
+  transition: all var(--transition-normal);
+}
+
+.topology-node:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.topology-node.active {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.node-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  background: var(--bg-elevated);
+  border: 2px solid var(--border-default);
+  border-radius: 50%;
+  transition: all var(--transition-normal);
+  position: relative;
+  z-index: 2;
+}
+
+.topology-node:hover .node-icon,
+.topology-node.active .node-icon {
+  border-color: var(--accent-primary);
+  box-shadow: var(--glow-strong-cyan);
+}
+
+.node-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.topology-node.active .node-label {
+  color: var(--accent-primary);
+}
+
+.node-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-primary);
+  animation: pulseRing 2.5s ease-out infinite;
+  opacity: 0;
+  z-index: 1;
+}
+
+.topology-node:hover .node-pulse,
+.topology-node.active .node-pulse {
+  opacity: 1;
+}
+
+/* Detail Panel */
+.topology-detail {
+  margin-top: 24px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  animation: fadeInUp 0.3s ease;
+  box-shadow: var(--glow-cyan);
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.detail-icon {
+  font-size: 1.5rem;
+}
+
+.detail-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  flex: 1;
+}
+
+.detail-close {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.detail-close:hover {
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+}
+
+.detail-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.detail-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.spec-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-primary);
+  background: rgba(0, 212, 255, 0.06);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+}
+
+.spec-bullet {
+  color: var(--accent-secondary);
+}
+
+@media (max-width: 768px) {
+  .topology-diagram {
+    height: 400px;
+  }
+
+  .node-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .node-label {
+    font-size: 0.65rem;
+  }
+}
