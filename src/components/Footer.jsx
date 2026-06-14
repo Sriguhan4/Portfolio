@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="footer-brand">
             <div className="navbar-logo">
               <span className="logo-cloud">☁</span>
-              <span className="logo-text">CCC</span>
+              <span className="logo-text">The boss</span>
               <span className="logo-cursor">_</span>
             </div>
             <p className="footer-desc">
@@ -35,18 +35,15 @@ export default function Footer() {
             <ul>
               <li><a href="#arsenal">Tech Arsenal</a></li>
               <li><a href="#projects">Mission Log</a></li>
+              <li><a href="#projects">Projects</a></li>
               <li><a href="#contact">Contact</a></li>
-              <li><a href="#quiz">Cloud Quiz</a></li>
-              <li><a href="/resume.pdf" download>Resume</a></li>
+              <li><a href="/Resume/Sriguhan_S_Resume.pdf" download>Resume</a></li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
           <p>&copy; {currentYear} Sriguhan S. All systems operational.</p>
-          <div className="tech-stack-footer">
-            Built with <span>React</span> & <span>Vite</span>
-          </div>
         </div>
       </div>
     </footer>

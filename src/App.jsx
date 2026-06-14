@@ -8,6 +8,7 @@ import TechArsenal from './components/TechArsenal';
 import Projects from './components/Projects';
 import ContactCenter from './components/ContactCenter';
 import CloudQuiz from './components/CloudQuiz';
+import Subscribe from './components/Subscribe';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -26,6 +27,7 @@ function App() {
         <Projects />
         <ContactCenter />
         <CloudQuiz />
+        <Subscribe />
       </main>
 
       <Footer />

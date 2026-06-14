@@ -7,7 +7,7 @@ const nodes = [
     id: 'internet',
     label: 'Internet',
     icon: '🌍',
-    x: 50, y: 5,
+    x: 50, y: 10,
     details: 'Public internet connection via ISP. External traffic ingress point for all hosted services.',
     specs: ['ISP Gateway', 'Public IP (Dynamic)', 'Bandwidth: 100 Mbps']
   },
@@ -15,23 +15,15 @@ const nodes = [
     id: 'router',
     label: 'Router',
     icon: '📡',
-    x: 50, y: 25,
+    x: 50, y: 35,
     details: 'Home router with NAT, firewall, and port forwarding configured for external access.',
     specs: ['NAT / PAT Enabled', 'Firewall Rules Active', 'Port Forwarding: 80, 443, 22']
-  },
-  {
-    id: 'switch',
-    label: 'Switch',
-    icon: '🔀',
-    x: 50, y: 45,
-    details: 'Network switch connecting all lab devices on the local network segment.',
-    specs: ['Gigabit Ethernet', 'VLAN Support', '8 Ports Available']
   },
   {
     id: 'server',
     label: 'Ubuntu Server',
     icon: '🖥',
-    x: 50, y: 65,
+    x: 50, y: 60,
     details: 'Primary home lab server running Ubuntu Server 22.04 LTS with Docker containers.',
     specs: ['Lenovo V15', 'Ubuntu 22.04 LTS', '8GB RAM / 256GB SSD']
   },
@@ -55,8 +47,7 @@ const nodes = [
 
 const connections = [
   { from: 'internet', to: 'router' },
-  { from: 'router', to: 'switch' },
-  { from: 'switch', to: 'server' },
+  { from: 'router', to: 'server' },
   { from: 'server', to: 'services' },
   { from: 'server', to: 'monitoring' },
 ];
@@ -75,9 +66,6 @@ export default function InfraTopology() {
       <div className="grid-bg"></div>
       <div className="container">
         <div className="section-header">
-          <div className="section-tag">
-            <span>🌐</span> Infrastructure Topology
-          </div>
           <h2 className="section-title">Network Architecture</h2>
           <p className="section-subtitle">Click on any node to explore the infrastructure components.</p>
         </div>

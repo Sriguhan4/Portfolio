@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTheme } from '../context/ThemeContext';
 import './Navbar.css';
 
 const navLinks = [
@@ -16,6 +17,7 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +48,7 @@ export default function Navbar() {
       <div className="navbar-container">
         <div className="navbar-logo" onClick={() => scrollTo('hero')}>
           <span className="logo-cloud">☁</span>
-          <span className="logo-text">CCC</span>
+          <span className="logo-text">The boss</span>
           <span className="logo-cursor">_</span>
         </div>
 
@@ -70,6 +72,16 @@ export default function Navbar() {
               {link.label}
             </button>
           ))}
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          >
+            <span className={`theme-icon ${theme === 'dark' ? 'moon' : 'sun'}`}>
+              {theme === 'dark' ? '🌙' : '☀️'}
+            </span>
+          </button>
           <div className="nav-status">
             <span className="status-dot healthy"></span>
             <span className="nav-status-text">Online</span>

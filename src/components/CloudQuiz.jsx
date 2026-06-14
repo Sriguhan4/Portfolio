@@ -50,9 +50,6 @@ export default function CloudQuiz() {
       <section id="quiz" className="section" ref={ref}>
         <div className="container">
           <div className="section-header">
-            <div className="section-tag">
-              <span>🧠</span> Bonus Module
-            </div>
             <h2 className="section-title">Knowledge Evaluation</h2>
             <p className="section-subtitle">Test your knowledge across different tech domains.</p>
           </div>

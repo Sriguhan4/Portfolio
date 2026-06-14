@@ -25,13 +25,13 @@ export const commandRegistry = {
     description: 'Display identity info',
     execute: () => ({
       type: 'text',
-      content: `╭──────────────────────────────────────╮
-│  👤 Sriguhan S                       │
-│  ☁  Cloud & Infrastructure Engineer  │
-│  🐧 Linux Enthusiast                 │
-│  🏠 Home Lab Operator                │
-│  📍 India                            │
-╰──────────────────────────────────────╯`
+      content: `--------------------------------------
+   👤 Sriguhan S                       
+   ☁  Cloud & Infrastructure Engineer  
+   🐧 Linux Enthusiast                 
+   🏠 Home Lab Operator                
+   📍 India                            
+--------------------------------------`
     })
   },
 
@@ -39,20 +39,20 @@ export const commandRegistry = {
     description: 'Professional summary',
     execute: () => ({
       type: 'text',
-      content: `┌─ PROFESSIONAL SUMMARY ─────────────────────────────┐
-│                                                     │
-│  Cloud & Infrastructure Enthusiast building          │
-│  real-world systems through hands-on home lab        │
-│  experience. Passionate about Linux administration,  │
-│  networking, and cloud computing.                    │
-│                                                     │
-│  Currently focused on:                              │
-│  → Linux Server Administration                      │
-│  → Cloud Computing (AWS)                            │
-│  → Networking & Infrastructure                      │
-│  → DevOps & Automation                              │
-│                                                     │
-└─────────────────────────────────────────────────────┘`
+      content: `--- PROFESSIONAL SUMMARY ------------------------------
+                                                      
+   Cloud & Infrastructure Enthusiast building          
+   real-world systems through hands-on home lab        
+   experience. Passionate about Linux administration,  
+   networking, and cloud computing.                    
+                                                      
+   Currently focused on:                              
+   → Linux Server Administration                      
+   → Cloud Computing (AWS)                            
+   → Networking & Infrastructure                      
+   → DevOps & Automation                              
+                                                      
+-------------------------------------------------------`
     })
   },
 
@@ -60,17 +60,17 @@ export const commandRegistry = {
     description: 'Technical skill set',
     execute: () => ({
       type: 'text',
-      content: `┌─ TECH ARSENAL ──────────────────────────────────────┐
-│                                                     │
-│  ☁  CLOUD         │ AWS, Azure*, GCP*               │
-│  🔧 DEVOPS        │ Docker, Git, GitHub Actions      │
-│  🐧 LINUX         │ Ubuntu Server, SSH, Bash, Systemd│
-│  🌐 NETWORKING    │ TCP/IP, DNS, DHCP, VLANs         │
-│  📊 MONITORING    │ Grafana, Prometheus, Uptime       │
-│  💻 WEB           │ HTML, CSS, JS, React, Next.js    │
-│                                                     │
-│  * = Planned / Learning                             │
-└─────────────────────────────────────────────────────┘`
+      content: `--- TECH ARSENAL --------------------------------------
+                                                      
+   ☁  CLOUD         | AWS, Azure*, GCP*               
+   🔧 DEVOPS        | Docker, Git, GitHub Actions      
+   🐧 LINUX         | Ubuntu Server, SSH, Bash, Systemd
+   🌐 NETWORKING    | TCP/IP, DNS, DHCP, VLANs         
+   📊 MONITORING    | Grafana, Prometheus, Uptime       
+   💻 WEB           | HTML, CSS, JS, React, Next.js    
+                                                      
+   * = Planned / Learning                             
+-------------------------------------------------------`
     })
   },
 
@@ -78,22 +78,22 @@ export const commandRegistry = {
     description: 'Home lab specifications',
     execute: () => ({
       type: 'text',
-      content: `┌─ HOME LAB SPECS ────────────────────────────────────┐
-│                                                     │
-│  🖥  Machine    : Lenovo V15                         │
-│  💻 OS         : Ubuntu Server 22.04 LTS            │
-│  🧠 RAM        : 8 GB DDR4                          │
-│  💾 Storage    : 256 GB SSD                          │
-│  🌐 Network    : Ethernet (1 Gbps)                  │
-│                                                     │
-│  RUNNING SERVICES:                                  │
-│  ├── 🌐 Web Server (Nginx)                          │
-│  ├── 📊 Monitoring (Grafana + Prometheus)            │
-│  ├── 🔒 SSH Server                                   │
-│  └── 🐳 Docker Engine                                │
-│                                                     │
-│  Status: ● ONLINE | Uptime: 47d 12h                 │
-└─────────────────────────────────────────────────────┘`
+      content: `--- HOME LAB SPECS ------------------------------------
+                                                      
+   🖥  Machine    : Lenovo V15                         
+   💻 OS         : Ubuntu Server 22.04 LTS            
+   🧠 RAM        : 8 GB DDR4                          
+   💾 Storage    : 256 GB SSD                          
+   🌐 Network    : Ethernet (1 Gbps)                  
+                                                      
+   RUNNING SERVICES:                                  
+   ├── 🌐 Web Server (Nginx)                          
+   ├── 📊 Monitoring (Grafana + Prometheus)            
+   ├── 🔒 SSH Server                                   
+   └── 🐳 Docker Engine                                
+                                                      
+   Status: ● ONLINE | Uptime: 47d 12h                 
+-------------------------------------------------------`
     })
   },
 
@@ -101,20 +101,20 @@ export const commandRegistry = {
     description: 'Service status dashboard',
     execute: () => ({
       type: 'text',
-      content: `┌─ SERVICE STATUS ────────────────────────────────────┐
-│                                                     │
-│  SERVICE          STATUS      UPTIME     PORT       │
-│  ─────────────────────────────────────────────────   │
-│  ● nginx          active      47d 12h    80/443     │
-│  ● grafana        active      47d 12h    3000       │
-│  ● prometheus     active      47d 12h    9090       │
-│  ● sshd           active      47d 12h    22         │
-│  ● docker         active      47d 12h    2375       │
-│  ● node-exporter  active      47d 12h    9100       │
-│  ○ jenkins        inactive    -          8080       │
-│                                                     │
-│  ● Active: 6  ○ Inactive: 1  ✕ Failed: 0           │
-└─────────────────────────────────────────────────────┘`
+      content: `--- SERVICE STATUS ------------------------------------
+                                                      
+   SERVICE          STATUS      UPTIME     PORT       
+   -------------------------------------------------   
+   ● nginx          active      47d 12h    80/443     
+   ● grafana        active      47d 12h    3000       
+   ● prometheus     active      47d 12h    9090       
+   ● sshd           active      47d 12h    22         
+   ● docker         active      47d 12h    2375       
+   ● node-exporter  active      47d 12h    9100       
+   ○ jenkins        inactive    -          8080       
+                                                      
+   ● Active: 6  ○ Inactive: 1  ✕ Failed: 0           
+-------------------------------------------------------`
     })
   },
 
@@ -122,26 +122,26 @@ export const commandRegistry = {
     description: 'View project portfolio',
     execute: () => ({
       type: 'text',
-      content: `┌─ PROJECT PORTFOLIO ─────────────────────────────────┐
-│                                                     │
-│  01. Cloud Command Center Portfolio                  │
-│      Status: ✅ Completed                            │
-│      Stack: React, Vite, CSS                         │
-│                                                     │
-│  02. Home Lab Infrastructure                         │
-│      Status: 🔄 In Progress                          │
-│      Stack: Ubuntu, Docker, Nginx                    │
-│                                                     │
-│  03. Monitoring Stack                                │
-│      Status: 🔄 In Progress                          │
-│      Stack: Grafana, Prometheus, Node Exporter       │
-│                                                     │
-│  04. CI/CD Pipeline                                  │
-│      Status: 📋 Planned                              │
-│      Stack: GitHub Actions, Docker, AWS              │
-│                                                     │
-│  Scroll down to 'Projects' section for details →     │
-└─────────────────────────────────────────────────────┘`
+      content: `--- PROJECT PORTFOLIO ---------------------------------
+                                                      
+   01. Cloud Command Center Portfolio                  
+       Status: ✅ Completed                            
+       Stack: React, Vite, CSS                         
+                                                      
+   02. Home Lab Infrastructure                         
+       Status: 🔄 In Progress                          
+       Stack: Ubuntu, Docker, Nginx                    
+                                                      
+   03. Monitoring Stack                                
+       Status: 🔄 In Progress                          
+       Stack: Grafana, Prometheus, Node Exporter       
+                                                      
+   04. CI/CD Pipeline                                  
+       Status: 📋 Planned                              
+       Stack: GitHub Actions, Docker, AWS              
+                                                      
+   Scroll down to 'Projects' section for details →     
+-------------------------------------------------------`
     })
   },
 
@@ -159,16 +159,15 @@ export const commandRegistry = {
     description: 'Contact information',
     execute: () => ({
       type: 'text',
-      content: `┌─ CONTACT CENTER ────────────────────────────────────┐
-│                                                     │
-│  📧 Email     : sriguhan@example.com                │
-│  💼 LinkedIn  : linkedin.com/in/sriguhan            │
-│  🐙 GitHub    : github.com/sriguhan                 │
-│  🐦 X/Twitter : @sriguhan                           │
-│  📋 Naukri    : naukri.com/sriguhan                  │
-│                                                     │
-│  Or scroll down to the Contact section →             │
-└─────────────────────────────────────────────────────┘`
+      content: `--- CONTACT CENTER ------------------------------------
+                                                      
+   📧 Email     : sriguhanshree2006@gmail.com                
+   💼 LinkedIn  : linkedin.com/in/shree3110           
+   🐙 GitHub    : github.com/Sriguhan4                
+   🐦 X/Twitter : x.com/Sriguhanboss                  
+                                                      
+   Or scroll down to the Contact section →             
+-------------------------------------------------------`
     })
   },
 
@@ -200,20 +199,20 @@ export const commandRegistry = {
         '',
         '🔓 ACCESS GRANTED',
         '',
-        '╔══════════════════════════════════════════╗',
-        '║                                          ║',
-        '║   🎉 HIRING MODE ACTIVATED!              ║',
-        '║                                          ║',
-        '║   Sriguhan is available for:             ║',
-        '║   → Cloud Engineering roles              ║',
-        '║   → DevOps positions                     ║',
-        '║   → Infrastructure roles                 ║',
-        '║   → Linux Administration                 ║',
-        '║                                          ║',
-        '║   📧 Send an email to get started!       ║',
-        '║   💼 Check LinkedIn for more details.     ║',
-        '║                                          ║',
-        '╚══════════════════════════════════════════╝'
+        '--------------------------------------------',
+        '',
+        '   🎉 HIRING MODE ACTIVATED!              ',
+        '',
+        '   Sriguhan is available for:             ',
+        '   → Cloud Engineering roles              ',
+        '   → DevOps positions                     ',
+        '   → Infrastructure roles                 ',
+        '   → Linux Administration                 ',
+        '',
+        '   📧 Send an email to get started!       ',
+        '   💼 Check LinkedIn for more details.     ',
+        '',
+        '--------------------------------------------'
       ]
     })
   },
@@ -251,14 +250,14 @@ export const commandRegistry = {
 
 export const getWelcomeMessage = () => [
   '',
-  '╔══════════════════════════════════════════════════════════╗',
-  '║                                                          ║',
-  '║   ☁  Cloud Command Center v1.0                          ║',
-  '║   Welcome to Sriguhan\'s Terminal                         ║',
-  '║                                                          ║',
-  '║   Type "help" to see available commands.                 ║',
-  '║   Use ↑↓ arrows to navigate command history.            ║',
-  '║                                                          ║',
-  '╚══════════════════════════════════════════════════════════╝',
+  '------------------------------------------------------------',
+  '',
+  '   ☁  Cloud Command Center v1.0',
+  '   Welcome to Sriguhan\'s Terminal',
+  '',
+  '   Type "help" to see available commands.',
+  '   Use ↑↓ arrows to navigate command history.',
+  '',
+  '------------------------------------------------------------',
   ''
 ];

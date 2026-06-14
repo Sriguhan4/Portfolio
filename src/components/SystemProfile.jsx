@@ -1,31 +1,49 @@
+import { useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import './SystemProfile.css';
 
 const certifications = [
-  { name: 'AWS Cloud', icon: '☁️', status: 'learning', org: 'Amazon Web Services' },
-  { name: 'Linux Essentials', icon: '🐧', status: 'learning', org: 'Linux Professional Institute' },
-  { name: 'Networking', icon: '🌐', status: 'learning', org: 'Cisco / CompTIA' },
-  { name: 'Cloud Fundamentals', icon: '📋', status: 'planned', org: 'Various Providers' },
-];
+  "Screenshot 2025-11-11 185714.png",
+  "Screenshot 2026-06-14 124531.png",
+  "Screenshot 2026-06-14 124619.png",
+  "Screenshot 2026-06-14 124702.png",
+  "Screenshot 2026-06-14 124739.png",
+  "Screenshot 2026-06-14 124802.png",
+  "Screenshot 2026-06-14 124831.png",
+  "Screenshot 2026-06-14 124907.png",
+  "Screenshot 2026-06-14 125158.png",
+  "Screenshot 2026-06-14 130043.png",
+  "Screenshot 2026-06-14 130200.png",
+  "Screenshot 2026-06-14 130245.png",
+  "Screenshot 2026-06-14 130327.png"
+].map((filename, i) => ({
+  name: `Certificate ${i + 1}`,
+  file: `/certificates/${filename}`
+}));
 
 const focusAreas = [
   { label: 'Linux Administration', icon: '🐧', color: '#22c55e' },
   { label: 'Cloud Computing', icon: '☁️', color: '#00d4ff' },
   { label: 'Networking', icon: '🌐', color: '#a855f7' },
   { label: 'DevOps', icon: '🔧', color: '#f97316' },
+  { label: 'Docker', icon: '📦', color: '#2496ed' },
+  { label: 'CI/CD', icon: '⚙️', color: '#ff5e00' },
+  { label: 'Kubernetes', icon: '☸️', color: '#326ce5' },
+  { label: 'Monitoring', icon: '📊', color: '#e50914' },
+  { label: 'Infrastructure as Code', icon: '🏗️', color: '#14b8a6' },
+  { label: 'AWS Cloud', icon: '🌍', color: '#ff9900' },
 ];
 
 export default function SystemProfile() {
   const { ref, isVisible } = useScrollReveal();
+  const [selectedCert, setSelectedCert] = useState(null);
 
   return (
     <section id="profile" className="section" ref={ref}>
       <div className="grid-bg"></div>
       <div className="container">
         <div className="section-header">
-          <div className="section-tag">
-            <span>👤</span> System Profile
-          </div>
+
           <h2 className="section-title">cat /etc/profile</h2>
           <p className="section-subtitle">Professional summary, education, and current focus areas.</p>
         </div>
@@ -39,14 +57,13 @@ export default function SystemProfile() {
             </div>
             <div className="summary-content">
               <p>
-                Cloud & Infrastructure Enthusiast with a passion for building real-world systems
-                through hands-on home lab experience. Focused on Linux administration, cloud computing,
-                networking fundamentals, and DevOps practices.
+                Cloud & Infrastructure Enthusiast with a passion for building real-world systems through hands-on home lab experience. Focused on Linux administration, cloud computing, networking, DevOps practices, and infrastructure automation.
               </p>
               <p>
-                Currently building and managing a personal home lab server running Ubuntu Server
-                with Docker containers, monitoring stack, and self-hosted services to develop
-                practical infrastructure skills.
+                Currently building and managing a personal Ubuntu Server home lab, working with Docker containers, monitoring tools, self-hosted services, and cloud technologies to develop practical infrastructure and operations skills.
+              </p>
+              <p>
+                Actively learning Kubernetes, CI/CD, observability, and modern cloud-native technologies. Final-year student seeking internship and full-time opportunities in Cloud Engineering, DevOps, Infrastructure, and Site Reliability Engineering.
               </p>
             </div>
           </div>
@@ -61,17 +78,25 @@ export default function SystemProfile() {
               <div className="timeline-item">
                 <div className="timeline-dot"></div>
                 <div className="timeline-content">
-                  <span className="timeline-date">Present</span>
-                  <h4>B.Tech / B.E. (Computer Science)</h4>
-                  <p>Pursuing degree with focus on cloud computing and infrastructure</p>
+                  <span className="timeline-date">7.84 CGPA</span>
+                  <h4>B.E Computer Science and Engineering (2023-2027)</h4>
+                  <p>Coimbatore Institute of Engineering and Technologies</p>
                 </div>
               </div>
               <div className="timeline-item">
                 <div className="timeline-dot completed"></div>
                 <div className="timeline-content">
-                  <span className="timeline-date">Completed</span>
-                  <h4>Higher Secondary (12th)</h4>
-                  <p>Completed with focus on Science & Mathematics</p>
+                  <span className="timeline-date">72.33%</span>
+                  <h4>Higher Secondary (2022-2023)</h4>
+                  <p>Mangalam Higher Secondary School</p>
+                </div>
+              </div>
+              <div className="timeline-item">
+                <div className="timeline-dot completed"></div>
+                <div className="timeline-content">
+                  <span className="timeline-date">Pass</span>
+                  <h4>SSLC (2020-2021)</h4>
+                  <p>Mangalam Higher Secondary School</p>
                 </div>
               </div>
             </div>
@@ -97,25 +122,36 @@ export default function SystemProfile() {
           <div className="profile-card cert-card">
             <div className="card-header">
               <span className="card-icon">🏅</span>
-              <h3>Certifications</h3>
+              <h3>Certifications Gallery</h3>
             </div>
             <div className="cert-grid">
               {certifications.map((cert, i) => (
-                <div key={i} className={`cert-item ${cert.status}`}>
-                  <span className="cert-icon">{cert.icon}</span>
-                  <div className="cert-info">
-                    <h4>{cert.name}</h4>
-                    <p>{cert.org}</p>
-                  </div>
-                  <span className={`cert-badge ${cert.status}`}>
-                    {cert.status === 'learning' ? '📖 In Progress' : '📋 Planned'}
-                  </span>
+                <div key={i} className="cert-item gallery-item">
+                  <img 
+                    src={cert.file} 
+                    alt={cert.name} 
+                    className="cert-thumbnail" 
+                    onClick={() => setSelectedCert(cert.file)} 
+                  />
+                  <button className="btn-view-cert" onClick={() => setSelectedCert(cert.file)}>
+                    <span className="btn-icon">👁️</span> View
+                  </button>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
+
+      {/* Certificate Modal Overlay */}
+      {selectedCert && (
+        <div className="cert-modal-overlay" onClick={() => setSelectedCert(null)}>
+          <div className="cert-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="cert-modal-close" onClick={() => setSelectedCert(null)}>✕</button>
+            <img src={selectedCert} alt="Certificate" className="cert-modal-img" />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -1,6 +1,35 @@
+import { useState, useEffect } from 'react';
 import { useTypewriter } from '../hooks/useTypewriter';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import './Hero.css';
+
+function useCountUp(target, duration = 2000, isActive = true) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isActive) return;
+    let startTime = null;
+    let animFrame;
+
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      // Ease-out cubic for a satisfying deceleration
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) {
+        animFrame = requestAnimationFrame(step);
+      } else {
+        setCount(target);
+      }
+    };
+
+    animFrame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animFrame);
+  }, [target, duration, isActive]);
+
+  return count.toLocaleString();
+}
 
 const roles = [
   'Cloud & Infrastructure Enthusiast',
@@ -13,6 +42,7 @@ const roles = [
 export default function Hero() {
   const { displayText } = useTypewriter(roles, { typeSpeed: 60, deleteSpeed: 40, pauseTime: 2500 });
   const { ref, isVisible } = useScrollReveal();
+  const visitorCount = useCountUp(1247, 2500, isVisible);
 
   return (
     <section id="hero" className="hero section" ref={ref}>
@@ -47,12 +77,14 @@ export default function Hero() {
           </div>
 
           <p className="hero-desc">
-            Building real-world systems through hands-on home lab experience.
-            Passionate about Linux, cloud computing, networking, and infrastructure.
+        Aspiring Cloud & DevOps Engineer
+         building real-world infrastructure through hands-on home lab projects. 
+         Passionate about Linux, cloud platforms, networking, automation, monitoring, 
+         and scalable systems.
           </p>
 
           <div className="hero-actions">
-            <a href="/resume.pdf" download className="btn btn-primary">
+            <a href="/Resume/Sriguhan_S_Resume.pdf" download className="btn btn-primary">
               <span className="btn-icon">📄</span>
               Download Resume
             </a>
@@ -66,18 +98,8 @@ export default function Hero() {
 
           <div className="hero-stats">
             <div className="stat-item">
-              <span className="stat-number">4+</span>
-              <span className="stat-label">Projects</span>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
-              <span className="stat-number">6</span>
-              <span className="stat-label">Services Running</span>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
-              <span className="stat-number">1,247</span>
-              <span className="stat-label">Visitors</span>
+              <span className="stat-number">{visitorCount}</span>
+              <span className="stat-label">Portfolio Visitors</span>
             </div>
           </div>
         </div>
@@ -94,7 +116,7 @@ export default function Hero() {
               <span className="dot red"></span>
               <span className="dot yellow"></span>
               <span className="dot green"></span>
-              <span className="terminal-mini-title">sriguhan@cloudlab</span>
+              <span className="terminal-mini-title">sriguhan@homelab</span>
             </div>
             <div className="terminal-mini-body">
               <span className="t-prompt">$</span> neofetch<br />

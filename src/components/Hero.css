@@ -207,6 +207,12 @@
   position: relative;
   width: 220px;
   height: 220px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.avatar-container:hover {
+  transform: scale(1.08);
 }
 
 .avatar-glow {
@@ -214,16 +220,47 @@
   inset: -20px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(0, 212, 255, 0.15), transparent 70%);
-  animation: pulse 3s ease-in-out infinite;
+  animation: avatarGlowPulse 3s ease-in-out infinite;
+  transition: all 0.4s ease;
+}
+
+.avatar-container:hover .avatar-glow {
+  inset: -30px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.35), rgba(229, 9, 20, 0.1) 50%, transparent 70%);
+}
+
+@keyframes avatarGlowPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
 }
 
 .avatar-ring {
   position: absolute;
   inset: -6px;
   border-radius: 50%;
-  border: 2px solid var(--accent-primary);
+  border: 2px solid transparent;
+  border-top-color: var(--accent-primary);
+  border-right-color: var(--accent-primary);
   opacity: 0.5;
-  animation: glow 3s ease-in-out infinite;
+  animation: avatarRingSpin 6s linear infinite, avatarRingGlow 3s ease-in-out infinite;
+  transition: all 0.4s ease;
+}
+
+.avatar-container:hover .avatar-ring {
+  opacity: 1;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), inset 0 0 20px rgba(0, 212, 255, 0.1);
+  animation: avatarRingSpin 3s linear infinite, avatarRingGlow 2s ease-in-out infinite;
+}
+
+@keyframes avatarRingSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes avatarRingGlow {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 212, 255, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(0, 212, 255, 0.4); }
 }
 
 .avatar-img {
@@ -234,6 +271,12 @@
   border: 3px solid var(--bg-elevated);
   position: relative;
   z-index: 1;
+  transition: all 0.4s ease;
+}
+
+.avatar-container:hover .avatar-img {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
 }
 
 .hero-terminal-preview {

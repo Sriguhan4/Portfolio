@@ -15,9 +15,6 @@ export default function Projects() {
     <section id="projects" className="section" ref={ref}>
       <div className="container">
         <div className="section-header">
-          <div className="section-tag">
-            <span>🚀</span> Project Command Center
-          </div>
           <h2 className="section-title">Mission Log</h2>
           <p className="section-subtitle">Hands-on experience and systems built.</p>
         </div>

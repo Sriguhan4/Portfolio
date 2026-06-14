@@ -129,26 +129,22 @@ export default function ContactCenter() {
               <p>Find me on these platforms or download my resume.</p>
               
               <div className="social-links">
-                <a href="#" className="social-link">
+                <a href="https://www.linkedin.com/in/shree3110" target="_blank" rel="noopener noreferrer" className="social-link">
                   <span className="social-icon">💼</span>
                   <span className="social-text">LinkedIn</span>
                 </a>
-                <a href="#" className="social-link">
+                <a href="https://github.com/Sriguhan4" target="_blank" rel="noopener noreferrer" className="social-link">
                   <span className="social-icon">🐙</span>
                   <span className="social-text">GitHub</span>
                 </a>
-                <a href="#" className="social-link">
+                <a href="https://x.com/Sriguhanboss" target="_blank" rel="noopener noreferrer" className="social-link">
                   <span className="social-icon">🐦</span>
                   <span className="social-text">X (Twitter)</span>
-                </a>
-                <a href="#" className="social-link">
-                  <span className="social-icon">📋</span>
-                  <span className="social-text">Naukri</span>
                 </a>
               </div>
 
               <div className="resume-download">
-                <a href="/resume.pdf" download className="btn btn-secondary full-width">
+                <a href="/Resume/Sriguhan_S_Resume.pdf" download className="btn btn-secondary full-width">
                   <span className="btn-icon">📄</span> Download Resume PDF
                 </a>
               </div>

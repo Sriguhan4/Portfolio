@@ -58,9 +58,6 @@ export default function OperationsCenter() {
       <div className="grid-bg"></div>
       <div className="container">
         <div className="section-header">
-          <div className="section-tag">
-            <span>🖥</span> Operations Center
-          </div>
           <h2 className="section-title">Infrastructure Dashboard</h2>
           <p className="section-subtitle">Real-time home lab monitoring and service status overview.</p>
         </div>

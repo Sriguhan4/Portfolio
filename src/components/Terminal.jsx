@@ -84,7 +84,7 @@ export default function Terminal() {
       setHistory(prev => [...prev, { type: 'output', content: result.content }]);
       // Trigger download
       const link = document.createElement('a');
-      link.href = '/resume.pdf';
+      link.href = '/Resume/Sriguhan_S_Resume.pdf';
       link.download = 'Sriguhan_S_Resume.pdf';
       link.click();
     }
@@ -125,9 +125,9 @@ export default function Terminal() {
     <section id="terminal" className="section" ref={sectionRef}>
       <div className="container">
         <div className="section-header">
-          <div className="section-tag">
+          {/* <div className="section-tag">
             <span>⌨️</span> Interactive Terminal
-          </div>
+          </div> */}
           <h2 className="section-title">Command Center</h2>
           <p className="section-subtitle">
             Explore my portfolio through the command line. Type <code>help</code> to get started.
