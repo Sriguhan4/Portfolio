@@ -14,8 +14,9 @@ export default function Footer() {
               <span className="logo-cursor">_</span>
             </div>
             <p className="footer-desc">
-              Cloud Command Center portfolio built by Sriguhan S.
-              Showcasing cloud, networking, and infrastructure engineering skills.
+              Cloud Command Center by Sriguhan S.
+              Monitoring growth. Deploying knowledge.
+              Building reliable infrastructure for the future.
             </p>
           </div>
 
@@ -43,7 +44,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Sriguhan S. All systems operational.</p>
+          <p>&copy; {currentYear} Sri-Sas. All systems operational.</p>
         </div>
       </div>
     </footer>
